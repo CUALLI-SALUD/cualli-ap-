@@ -88,6 +88,7 @@ setInterval(() => {
   broadcast({
     type: "TOGGLE_UPDATED",
     toggle: globalState.toggle,
+    delta: -10,               // 👈 agregado
     total: globalState.delay
   });
 
