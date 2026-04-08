@@ -5,13 +5,13 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors({
-  origin: "*", // 👈 permite cualquier origen
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
-// 👇 manejar preflight (muy importante)
-app.options("*", cors());
+// 👇 ESTA es la forma moderna segura
+app.options(/.*/, cors());
 app.use(express.json());
 
 const server = http.createServer(app);
