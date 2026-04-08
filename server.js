@@ -86,8 +86,8 @@ setInterval(() => {
 
   // 📡 evento SOLO de toggle
   broadcast({
-    type: "DELAY_UPDATED",
-    delta: -10,
+    type: "TOGGLE_UPDATED",
+    toggle: globalState.toggle,
     total: globalState.delay
   });
 
